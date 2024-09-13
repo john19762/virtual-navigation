@@ -5,33 +5,18 @@
 
 #### 软件架构
 软件架构说明
-
+本项目是在重德xbot-u智能机器人基础上开发的，重德机器人的源码参见https://gitee.com/zhoulijun1976/xbot-u链接。
 
 #### 安装教程
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+1.  在项目https://gitee.com/zhoulijun1976/xbot-u基础上，将本项目中的\xbot\xbot_navi文件夹全部复制到https://gitee.com/zhoulijun1976/xbot-u项目中的\xbot文件夹下。
 
 #### 使用说明
+如果想使用虚拟障碍物构建出机器人活动空间实现导航，使用如下步骤：
+1.  roslaunch xbot_navi xbot_virnav.launch
+2.  roslaunch xbot_navi view_rviz.launch
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
-
-#### 参与贡献
-
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
-
-
-#### 特技
-
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  Gitee 官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解 Gitee 上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是 Gitee 最有价值开源项目，是综合评定出的优秀开源项目
-5.  Gitee 官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  Gitee 封面人物是一档用来展示 Gitee 会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+如果想使用虚拟路径点导航，启动机器人后，运行roslaunch xbot_navi build_map.launch
+1.运行rosrun xbot_navi zhouxbot_getpositon.py，记录机器人需要走的点
+2.将机器人放在刚才机器人的起点
+运行rosrun xbot_navi zhouxbot_publish_virnav.py 机器人即可按上一步存储的轨迹行走。
